@@ -1,0 +1,335 @@
+.q-icn {
+    width: 100%;
+    margin-top: 0;
+    max-width: 120px;
+}
+
+.gkhead3, .gkhead3:hover {
+    color: #fff;
+    text-align: left;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.gkhead2 {
+    text-align: left;
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.gkhead1 {
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.coin-img {
+    width: 28px;
+}
+
+.details1 {
+    text-align: left;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 2px 10px 23px;
+}
+
+.details2 {
+    text-align: left;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0px 2px 0px 17px;
+}
+
+.details3 {
+    text-align: center;
+    color: #6b7075;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.rules, .rules:hover {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: underline;
+}
+
+.gkhead4 {
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.gkhead5 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.gkhead6 {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.gkhead7 {
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.gkhead8 {
+    color: #9015c5;
+    text-align: center;
+    font-size: 31px;
+    font-weight: 600;
+    padding: 5px 0 0 0;
+}
+
+.gkhead9, .gkhead9:hover {
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding: 10px 0 5px 0;
+}
+
+/*--------------------------------------------------------------------------------- new-2 css---------------------------------------------------------------------------------- */
+
+.gkhead10 {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.gkhead11 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.gkhead12 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.gkhead13 {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.border-white {
+    border: 2px solid #fff;
+}
+
+.gkhead14 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 650;
+    margin-top: 80px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    height: 70px;
+    width: 70px;
+    padding: 16px 0;
+}
+
+/*------------------------------------------------------------------------------ login page css --------------------------------------------------------------------------------*/
+
+.login-text-2 {
+    font-size: 21px;
+    color: #fcff07;
+    font-weight: 700;
+    text-align: left;
+}
+
+.login-text-3 {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+}
+
+.logoo img {
+    border-radius: 8px;
+}
+
+.input-name {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 17px;
+    text-align: end;
+}
+
+.input-number {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 17px;
+    text-align: end;
+}
+
+input {
+    background: 0 0;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: 0;
+    margin-left: 5px;
+    font-size: 17px;
+    color: #fff;
+}
+
+.fnametop input, .fnametop-1 input {
+    line-height: 22px;
+    padding: 0 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.continue-btn {
+    color: #9015c5;
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0;
+    line-height: 55px;
+    outline: 0;
+    border: none;
+    border-radius: 30px;
+}
+
+.textbtm {
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    width: 100%;
+}
+
+.textbtm a {
+    color: #fff;
+}
+
+.sign-i {
+    color: #fff;
+    text-align: center;
+}
+
+.text-opacity {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.sign-ul {
+    color: #fff;
+    margin-top: 60px;
+}
+
+.sign-ul li {
+    color: #fcff07;
+    text-align: left;
+}
+
+.sign-ul li span {
+    color: #fff;
+    line-height: 25px;
+}
+
+/*------------------------------------------------------------------------------ otp page css --------------------------------------------------------------------------------*/
+
+.otp-content p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.otp-content h2 {
+    color: #fff;
+    font-size: 26px;
+    margin-top: 10px !important;
+}
+
+.otp-content .change-number {
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.otp-content .dialog {
+    margin-left: 0;
+    width: 100%;
+}
+
+.dialog {
+    margin-top: 50px;
+    margin-bottom: 37px;
+    width: 100%;
+    margin-left: 28px;
+}
+
+.otpbtn {
+    position: relative !important;
+    top: -21px !important;
+}
+
+.textbtm {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    width: 100%;
+}
+
+.otp-content .dialog input {
+    color: #fff;
+    width: 100%;
+    line-height: 28px;
+    font-size: 15px;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    /* Firefox */
+}
+
+
+
+.otp-screnn {
+    width: 100%;
+    margin-top: -20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

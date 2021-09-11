@@ -12,7 +12,7 @@
 
 <body>
     <div class="mobile-body mx-auto">
-        <div class="process-bar-55"></div>
+        <div class="process-bar-110"></div>
         <div class="a1">Let's get started,</div>
         <div class="a2">answer 2 simple questions to get <span class="text-yellow">100 coins</span> now:</div>
 

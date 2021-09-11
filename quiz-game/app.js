@@ -43,9 +43,8 @@ function showScores() {
 
 var questions = [
 
-    new Question("What is the capital of New Zealand?", ["Auckland", "Wallington", "Chandigadh", "Denmark"], "Wallington"),
-    new Question("Which is the official language of india?", ["Hindi", "Bengali", "Tamil", "Gujarati"], "Hindi"),
-    new Question("How many major colour is in indian flag?", ["1", "2", "3", "4"], "3")
+    new Question("What is the capital of India?", ["Mumbai", "Chennai", "Delhi", "Banglore"], "Delhi"),
+    new Question("Which is the official language of india?", ["Hindi", "Bengali", "Tamil", "Gujarati"], "Hindi")
 ];
 var quiz = new Quiz(questions);
 populate();

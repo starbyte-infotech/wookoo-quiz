@@ -31,6 +31,12 @@ if(isset($_GET['sid'])){
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
     <title>Question</title>
+    <style>
+        a
+        {
+            text-decoration: ;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,61 +44,86 @@ if(isset($_GET['sid'])){
         <div class="process-bar-55">
             <div class="a10">52s</div>
         </div>
-        <div class="a1">Let's get started,</div>
+        <div class="a1"><?php echo $SubFetch['sub_cat'];?></div>
         <div class="a2">answer 2 simple questions to get <span class="text-yellow">100 coins</span> now:</div>
 
+        <div class="col-12 row"> 
+            <div class="col-6" id="timer">
+                <div class="gkhead14 mx-auto mt-2" id="time">90</div>
+                <div class="mt-2" style="color: #fff; font-size: 20px; text-align: center;">TIME</div>
+            </div> 
+            <div class="col-6" id="timer">
+                <div class="gkhead14 mx-auto mt-2 quescore" id="score">0</div>
+                <div class="mt-2" style="color: #fff; font-size: 20px; text-align: center;">SCORE</div>
+            </div> 
+        </div>
+
+
+        <?php 
+            $subcat = $SubFetch['sub_cat'];
+            $quedata = "SELECT * FROM que_tbl WHERE sub_cat ='$subcat' ORDER BY RAND() LIMIT 1";
+            $queRes = mysqli_query($conn, $quedata);
+            $queFetch = mysqli_fetch_array($queRes);
+            $optionFirst = $queFetch['first_opt'];
+            $optionSec = $queFetch['sec_opt'];
+            $optionThird = $queFetch['third_opt'];
+        ?>
         <div class="row">
             <div class="mx-auto">
                 <div class="text-center question-border">
-                    <span class="f-s-14"> 1/2</span>
+                    <span class="f-s-14 gkhead11" id="number_question"> 1/2</span>
+                    <div class="f-s-14  gkhead11" id="number_question_extra" hidden>2</div>
+                    
                 </div>
             </div>
         </div>
-        <div class="a3">A bilingual can speak ___ languages.</div>
+        <div class="a3 gkhead12" id="question"><?php echo $queFetch['question'];?></div>
+        <input type="text" value="<?php echo $queFetch['q_id'];?>" id="question_unique" hidden>
 
-        <div class="row">
-            <a href="#" class="d-content">
-                <div class="col-9 mx-auto bg-gray">
+        <div class="row" id="answer_container">
+            <a href="#" class="d-content" style="text-decoration: none;" onclick="optionClick('first',<?php echo $queFetch['q_id'];?>); ">
+                <div class="col-9 mx-auto q_list_item  bg-transparent q-first bg-gray">
                     <div class="row">
                         <div class="col-1 p-0">
-                            <div class="round ms-auto">
+                            <div class="round ms-auto dot">
+                                <div class="inner-dot"></div>
                             </div>
                         </div>
                         <div class="col-11 p-0">
-                            <div class="a6">
-                                seven
+                            <div class="a6 gkhead13">
+                                <?php echo $optionFirst;?>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
-            <a href="#" class="d-content">
-                <div class="col-9 mx-auto bg-green">
+            <a href="#" class="d-content" style="text-decoration: none;" onclick="optionClick('second',<?php echo $queFetch['q_id'];?>);">
+                <div class="col-9 mx-auto q_list_item  bg-transparent q-second bg-gray">
                     <div class="row">
-                        <div class="col-1 p-0 ">
-                            <div class="round-green ms-auto">
-                                <div class="green"></div>
+                        <div class="col-1 p-0">
+                            <div class="round ms-auto dot">
+                                <div class="inner-dot"></div>
                             </div>
                         </div>
                         <div class="col-11 p-0">
-                            <div class="a6">
-                                seven
+                            <div class="a6 gkhead13">
+                                <?php echo $optionSec;?>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
-            <a href="#" class="d-content">
-                <div class="col-9 mx-auto bg-red">
+            <a href="#" class="d-content" style="text-decoration: none;" onclick="optionClick('third',<?php echo $queFetch['q_id'];?>);">
+                <div class="col-9 mx-auto q_list_item  bg-transparent q-third bg-gray">
                     <div class="row">
-                        <div class="col-1 p-0 ">
-                            <div class="round-red ms-auto">
-                                <div class="red"></div>
+                        <div class="col-1 p-0">
+                            <div class="round ms-auto dot">
+                                <div class="inner-dot"></div>
                             </div>
                         </div>
                         <div class="col-11 p-0">
-                            <div class="a6">
-                                seven
+                            <div class="a6 gkhead13">
+                                <?php echo $optionThird;?>
                             </div>
                         </div>
                     </div>
@@ -106,9 +137,7 @@ if(isset($_GET['sid'])){
 
     <script src="assets/js/bootstrap.bundle.js"></script>
 </body>
-<script src="assets/js/jquery/dist/jquery.min.js"></script>
 
-<script src="assets/js/jquery/dist/jquery.min.js"></script>
 <script>
     var navItems = document.querySelectorAll(".bottom-nav-item");
 
@@ -142,15 +171,24 @@ function optionClick(opt,qid)
         success: function(data) {  
             if(data == 1){ 
                 var score = $('.quescore').html();
-                $(".q_list_item.bg-transparent.q-"+opt).css("cssText","background-color: #2cb12c !important;");
-                $(".q-"+opt+" .smile").css("display","block"); 
+                // $(".q_list_item.bg-transparent.q-"+opt).css("cssText","background-color: #2cb12c !important;");
+                // $(".q-"+opt+" .smile").css("display","block"); 
+
+                $(".q_list_item.bg-transparent.q-"+opt).addClass('bg-green');
+                $(".q_list_item.bg-transparent.q-"+opt+" .row .dot").addClass('round-green');
+                $(".q_list_item.bg-transparent.q-"+opt+" .row .dot .inner-dot").addClass('green');
                 var add = parseInt(score)+20;
                 $(".quescore").html(add);
                 var finalScore = $('.quescore').text();
+
+
             }else{ 
                 var score1 = $('.quescore').html();
-                $(".q_list_item.bg-transparent.q-"+opt).css("cssText", "background-color: #e72c2c !important;");
-                $(".q-"+opt+" .sad").css("display","block");   
+                // $(".q_list_item.bg-transparent.q-"+opt).css("cssText", "background-color: #e72c2c !important;");
+                // $(".q-"+opt+" .sad").css("display","block");   
+                $(".q_list_item.bg-transparent.q-"+opt).addClass('bg-red');
+                $(".q_list_item.bg-transparent.q-"+opt+" .row .dot").addClass('round-red');
+                $(".q_list_item.bg-transparent.q-"+opt+" .row .dot .inner-dot").addClass('red');
                 var sub = score1-10;
                 $(".quescore").html(sub);
                 var finalScore = $('.quescore').text();                  
@@ -252,7 +290,7 @@ function optionClick(opt,qid)
 }
 // ------------ Time Counter ------------
 var counter = 90;
-var scorbord = 'scorbord.php';
+var scorbord = 'after-quiz.php';
 var interval = setInterval(function() {
     counter--;
     // Display 'counter' wherever you want to display it.
